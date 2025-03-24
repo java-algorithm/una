@@ -1,5 +1,3 @@
-package algorithm;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,7 +11,7 @@ import java.util.Queue;
  * 조합 + BFS 탐색
  */
 
-public class BJ_1941_소문난칠공주 {
+public class Main {
 	public static String[][] seats;
 	public static int answer = 0;
 	public static int[][] deltas = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
