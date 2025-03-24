@@ -1,5 +1,3 @@
-package algorithm;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +13,7 @@ import java.util.StringTokenizer;
  * - 아직 녹지 않은 빙산 List에 넣어서 관리
  */
 
-public class BJ_2573_빙산 {
+public class Main {
 	public static int[][] deltas = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
 	public static int N, M, iceberg[][];
 	public static List<int[]> icebergs;
