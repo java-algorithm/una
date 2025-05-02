@@ -25,11 +25,6 @@ public class Main {
 		Queue<int []> water = new ArrayDeque<>();
 		Queue<int []> hedgehog = new ArrayDeque<>();
 		
-		boolean[][] wVisited = new boolean[R][C];
-		boolean[][] hVisited = new boolean[R][C];
-		
-		int[] beaver = new int[2];
-		
 		for (int i = 0; i < R; i++) {
 			String str = br.readLine();
 			for (int j = 0; j < C; j++) {
@@ -37,25 +32,14 @@ public class Main {
 				
 				if (map[i][j] == 'S') {
 					hedgehog.offer(new int[] {i, j, 0});
-					hVisited[i][j] = true;
 				} else if (map[i][j] == '*') {
 					water.offer(new int[] {i, j});
-					wVisited[i][j] = true;
-				} else if (map[i][j] == 'D') {
-					beaver[0] = i;
-					beaver[1] = j;
 				}
 			}
 		}
 		
-		int answer = -1;
-		
 		while (!hedgehog.isEmpty()) {
 			int[] hCur = hedgehog.peek();
-			
-			if (hCur[0] == beaver[0] && hCur[1] == beaver[1]) {
-				
-			}
 			
 			int size = water.size();
 			
@@ -87,8 +71,7 @@ public class Main {
 					if (dx >= R || dy >= C || dx < 0 || dy < 0 || map[dx][dy] == '*' || map[dx][dy] == 'X') continue;
 					
 					if (map[dx][dy] == 'D') {
-						answer = hCur[2] + 1;
-						System.out.println(answer);
+						System.out.println(hCur[2] + 1);
 						return;
 					} else if (map[dx][dy] == '.') {
 						map[dx][dy] = 'S';
