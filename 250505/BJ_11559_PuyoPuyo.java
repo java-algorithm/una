@@ -9,18 +9,6 @@ import java.util.Queue;
 public class Main {
 	public static char[][] map;
 	public static int[][] deltas = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}};
-	public static int answer = 0;
-	
-	public static class Puyo {
-		int x, y;
-		char color;
-
-		public Puyo(int x, int y, char color) {
-			this.x = x;
-			this.y = y;
-			this.color = color;
-		}
-	}
 	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -37,15 +25,12 @@ public class Main {
 		
 		while (true) {
             boolean isPopped = false;
-
             boolean[][] visited = new boolean[12][6];
 
             for (int i = 0; i < 12; i++) {
                 for (int j = 0; j < 6; j++) {
                     if (map[i][j] != '.' && !visited[i][j]) {
-                        if (bfs(i, j, visited)) {
-                            isPopped = true;
-                        }
+                        if (bfs(i, j, visited)) isPopped = true;
                     }
                 }
             }
